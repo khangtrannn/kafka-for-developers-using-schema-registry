@@ -10,6 +10,7 @@
     <module>greeting-app</module>
     <module>schemas</module>
     <module>coffee-orders-service</module>
+    <module>coffee-orders-consumer</module>
   </modules>
   <properties>
     <maven.compiler.source>21</maven.compiler.source>
