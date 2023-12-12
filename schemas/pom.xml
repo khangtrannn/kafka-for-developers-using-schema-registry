@@ -132,6 +132,11 @@
               <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
               <enableDecimalLogicalType>true</enableDecimalLogicalType>
               <customConversions>org.apache.avro.Conversions$UUIDConversion</customConversions>
+              <imports>
+                <import>${project.basedir}/src/main/avro/Address.avsc</import>
+                <import>${project.basedir}/src/main/avro/Store.avsc</import>
+                <import>${project.basedir}/src/main/avro/OrderLineItem.avsc</import>
+              </imports>
             </configuration>
           </execution>
         </executions>

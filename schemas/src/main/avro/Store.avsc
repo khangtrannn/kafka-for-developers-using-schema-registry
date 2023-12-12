@@ -1,0 +1,15 @@
+{
+  "name": "Store",
+  "namespace": "org.khang.domain.generated",
+  "type": "record",
+  "fields": [
+    {
+      "name": "id",
+      "type": "int"
+    },
+    {
+      "name": "address",
+      "type": "Address"
+    }
+  ]
+}
