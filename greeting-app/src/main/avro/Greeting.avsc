@@ -1,0 +1,11 @@
+{
+  "name": "Greeting",
+  "namespace": "org.khang",
+  "type": "record",
+  "fields": [
+    {
+      "name": "greeting",
+      "type": "string"
+    }
+  ]
+}
