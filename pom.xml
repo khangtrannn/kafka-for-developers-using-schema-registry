@@ -8,6 +8,7 @@
   <packaging>pom</packaging>
   <modules>
     <module>greeting-app</module>
+    <module>schemas</module>
   </modules>
   <properties>
     <maven.compiler.source>21</maven.compiler.source>
