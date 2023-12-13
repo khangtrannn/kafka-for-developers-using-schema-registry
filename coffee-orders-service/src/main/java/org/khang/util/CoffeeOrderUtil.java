@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
 import java.util.Random;
+import java.util.UUID;
 
 import org.khang.domain.generated.*;
 
@@ -11,7 +12,7 @@ import org.khang.domain.generated.*;
 public class CoffeeOrderUtil {
   public static CoffeeOrder buildNewCoffeeOrder() {
     return CoffeeOrder.newBuilder()
-      .setId(randomId())
+      .setId(UUID.randomUUID())
       .setName("Khang Tran")
       .setStore(generateStore())
       .setOrderedTime(Instant.now())
