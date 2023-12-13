@@ -3,6 +3,9 @@ package consumer;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.util.Collections;
 import java.util.Properties;
 
@@ -38,6 +41,11 @@ public class CoffeeOrderConsumer {
         try {
           CoffeeOrder coffeeOrder = decodeAvroCoffeeOrder(record.value());
           logger.infof("Consumed message, key: %s, value: %s", record.key(), coffeeOrder.toString());
+
+          // ZoneId.SHORT_IDS Asia/Ho_Chi_Minh
+          var utcDateTime = LocalDateTime.ofInstant(coffeeOrder.getOrderedTime(), ZoneOffset.UTC);
+          var cstDateTime = LocalDateTime.ofInstant(coffeeOrder.getOrderedTime(), ZoneId.of("Asia/Ho_Chi_Minh"));
+          logger.infof("utcDateTime: %s, cstDateTime: %s", utcDateTime.toString(), cstDateTime.toString());
         } catch (Exception e) {
           logger.error("Exception is: ", e.getMessage(), e);
         }
