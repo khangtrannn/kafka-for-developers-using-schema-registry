@@ -2,6 +2,7 @@ package org.khang.util;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
@@ -16,6 +17,7 @@ public class CoffeeOrderUtil {
       .setName("Khang Tran")
       .setStore(generateStore())
       .setOrderedTime(Instant.now())
+      .setOrderedDate(LocalDate.now())
       .setOrderLineItems(generateOrderLineItems())
       .build();
   }

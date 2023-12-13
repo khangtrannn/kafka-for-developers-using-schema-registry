@@ -42,6 +42,13 @@
       }
     },
     {
+      "name": "ordered_date",
+      "type": {
+        "type": "int",
+        "logicalType": "date"
+      }
+    },
+    {
       "name": "status",
       "type": "string",
       "default": "NEW"
