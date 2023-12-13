@@ -5,11 +5,14 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Random;
+import java.util.UUID;
 
 import org.khang.domain.generated.Address;
 import org.khang.domain.generated.CoffeeOrder;
+import org.khang.domain.generated.CoffeeUpdateEvent;
 import org.khang.domain.generated.OrderId;
 import org.khang.domain.generated.OrderLineItem;
+import org.khang.domain.generated.OrderStatus;
 import org.khang.domain.generated.PickUp;
 import org.khang.domain.generated.Size;
 import org.khang.domain.generated.Store;
@@ -22,7 +25,7 @@ public class CoffeeOrderUtil {
       .build();
 
     return CoffeeOrder.newBuilder()
-      .setId(orderId)
+      .setId(UUID.randomUUID())
       .setName("Khang Tran")
       .setStore(generateStore())
       .setOrderedTime(Instant.now())
@@ -64,5 +67,12 @@ public class CoffeeOrderUtil {
   public static int randomId() {
     Random random = new Random();
     return random.nextInt(1000);
+  }
+
+  public static CoffeeUpdateEvent buildCoffeeOrderUpdateEvent() {
+    return CoffeeUpdateEvent.newBuilder()
+      .setId(UUID.randomUUID())
+      .setStatus(OrderStatus.PROCESSING)
+      .build();
   }
 }

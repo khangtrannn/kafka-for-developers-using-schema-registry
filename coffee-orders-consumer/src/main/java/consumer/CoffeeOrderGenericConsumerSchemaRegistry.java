@@ -27,14 +27,14 @@ public class CoffeeOrderGenericConsumerSchemaRegistry {
     properties.put(ConsumerConfig.GROUP_ID_CONFIG, "coffee.consumer.sr");
     properties.put(KafkaAvroDeserializerConfig.SCHEMA_REGISTRY_URL_CONFIG, "http://localhost:8081");
 
-    KafkaConsumer<OrderId, GenericRecord> consumer = new KafkaConsumer<>(properties);
+    KafkaConsumer<String, GenericRecord> consumer = new KafkaConsumer<>(properties);
     consumer.subscribe(Collections.singletonList(COFFEE_ORDERS));
     logger.info("Consumer started");
 
     while (true) {
-      ConsumerRecords<OrderId, GenericRecord> records = consumer.poll(Duration.ofMillis(1000));
+      ConsumerRecords<String, GenericRecord> records = consumer.poll(Duration.ofMillis(1000));
 
-      for (ConsumerRecord<OrderId, GenericRecord> record : records) {
+      for (ConsumerRecord<String, GenericRecord> record : records) {
         try {
           logger.infof("Consumed message, key: %s, value: %s", record.key(), record.value().toString());
         } catch (Exception e) {
