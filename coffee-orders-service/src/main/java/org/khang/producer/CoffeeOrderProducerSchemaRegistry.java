@@ -6,9 +6,9 @@ import java.util.concurrent.ExecutionException;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
-import org.apache.kafka.common.serialization.StringSerializer;
 import org.jboss.logging.Logger;
 import org.khang.domain.generated.CoffeeOrder;
+import org.khang.domain.generated.OrderId;
 import org.khang.util.CoffeeOrderUtil;
 
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
@@ -21,14 +21,14 @@ public class CoffeeOrderProducerSchemaRegistry {
   public static void main(String[] args) throws InterruptedException, ExecutionException {
     Properties properties = new Properties();
     properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
-    properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+    properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, KafkaAvroSerializer.class.getName());
     properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, KafkaAvroSerializer.class.getName());
     properties.put(KafkaAvroSerializerConfig.SCHEMA_REGISTRY_URL_CONFIG, "http://localhost:8081");
 
-    KafkaProducer<String, CoffeeOrder> producer = new KafkaProducer<>(properties);
+    KafkaProducer<OrderId, CoffeeOrder> producer = new KafkaProducer<>(properties);
     CoffeeOrder coffeeOrder = CoffeeOrderUtil.buildNewCoffeeOrder();
 
-    ProducerRecord<String, CoffeeOrder> producerRecord = new ProducerRecord<>(COFFEE_ORDERS, coffeeOrder);
+    ProducerRecord<OrderId, CoffeeOrder> producerRecord = new ProducerRecord<>(COFFEE_ORDERS, coffeeOrder.getId(), coffeeOrder);
     var recordMetaData = producer.send(producerRecord).get();
     logger.infof("recordMetaData: %s", recordMetaData);
   }

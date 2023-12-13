@@ -35,6 +35,25 @@ org.apache.avro.message.MissingSchemaException: Cannot resolve schema for finger
   Enforcing Data Contracts
   Handling Schema Evolution
 
+- Where does the Schema gets stored?
+  _schemas topic
+
+- Different ways to Interact with Schema Registry?
+  REST API
+
+- Schema Registry REST API
+  Subjects
+  Fundamentally a scope in which the schemas evolve
+
+  Schemas
+  This resource is used to represent a schema
+
+  Config
+  This resource is used to update cluster level config for the Schema Registry
+
+  Compatibility
+  This resource is used to check the compatibility between schemas
+
 ## Set up Kafka Environment using Docker
 
 - This should set up the Zookeeper and Kafka Broker in your local environment

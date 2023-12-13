@@ -5,15 +5,23 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Random;
-import java.util.UUID;
 
-import org.khang.domain.generated.*;
+import org.khang.domain.generated.Address;
+import org.khang.domain.generated.CoffeeOrder;
+import org.khang.domain.generated.OrderId;
+import org.khang.domain.generated.OrderLineItem;
+import org.khang.domain.generated.Size;
+import org.khang.domain.generated.Store;
 
 
 public class CoffeeOrderUtil {
   public static CoffeeOrder buildNewCoffeeOrder() {
+    var orderId = OrderId.newBuilder()
+      .setId(randomId())
+      .build();
+
     return CoffeeOrder.newBuilder()
-      .setId(UUID.randomUUID())
+      .setId(orderId)
       .setName("Khang Tran")
       .setStore(generateStore())
       .setOrderedTime(Instant.now())

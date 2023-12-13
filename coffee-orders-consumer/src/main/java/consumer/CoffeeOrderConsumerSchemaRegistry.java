@@ -8,9 +8,9 @@ import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
-import org.apache.kafka.common.serialization.StringDeserializer;
 import org.jboss.logging.Logger;
 import org.khang.domain.generated.CoffeeOrder;
+import org.khang.domain.generated.OrderId;
 
 import io.confluent.kafka.serializers.KafkaAvroDeserializer;
 import io.confluent.kafka.serializers.KafkaAvroDeserializerConfig;
@@ -22,20 +22,20 @@ public class CoffeeOrderConsumerSchemaRegistry {
   public static void main(String[] args) {
     Properties properties = new Properties();
     properties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
-    properties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
+    properties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, KafkaAvroDeserializer.class.getName());
     properties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, KafkaAvroDeserializer.class.getName());
     properties.put(ConsumerConfig.GROUP_ID_CONFIG, "coffee.consumer.sr");
     properties.put(KafkaAvroDeserializerConfig.SCHEMA_REGISTRY_URL_CONFIG, "http://localhost:8081");
     properties.put(KafkaAvroDeserializerConfig.SPECIFIC_AVRO_READER_CONFIG, true);
 
-    KafkaConsumer<String, CoffeeOrder> consumer = new KafkaConsumer<>(properties);
+    KafkaConsumer<OrderId, CoffeeOrder> consumer = new KafkaConsumer<>(properties);
     consumer.subscribe(Collections.singletonList(COFFEE_ORDERS));
     logger.info("Consumer started");
 
     while (true) {
-      ConsumerRecords<String, CoffeeOrder> records = consumer.poll(Duration.ofMillis(1000));
+      ConsumerRecords<OrderId, CoffeeOrder> records = consumer.poll(Duration.ofMillis(1000));
 
-      for (ConsumerRecord<String, CoffeeOrder> record : records) {
+      for (ConsumerRecord<OrderId, CoffeeOrder> record : records) {
         try {
           logger.infof("Consumed message, key: %s, value: %s", record.key(), record.value().toString());
         } catch (Exception e) {
