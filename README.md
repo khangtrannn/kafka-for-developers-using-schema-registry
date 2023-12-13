@@ -18,6 +18,23 @@ org.apache.avro.message.MissingSchemaException: Cannot resolve schema for finger
         at consumer.CoffeeOrderConsumer.main(CoffeeOrderConsumer.java:42)
 ```
 
+- Why Schema Registry?
+  Producers and consumers are decoupled and they exchange data using the Kafka Broker
+  But the consumer is indirectly coupled to producer to understand the data format
+  Anytime business requirements change data may be needed to change
+
+- Handling Data Changes
+  Business needed to make change and the producer modifed the data
+
+- Kafka Architecture in Prod
+  There is no limit on number of data types that can be exchanged between the apps
+  With this kind of architecture the failure is very likely in the consumer side
+  Publishing any new changes requires approval from all the consuming apps
+
+- Schema Registry
+  Enforcing Data Contracts
+  Handling Schema Evolution
+
 ## Set up Kafka Environment using Docker
 
 - This should set up the Zookeeper and Kafka Broker in your local environment
