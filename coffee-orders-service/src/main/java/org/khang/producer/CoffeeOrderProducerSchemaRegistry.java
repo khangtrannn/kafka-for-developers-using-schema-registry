@@ -31,5 +31,6 @@ public class CoffeeOrderProducerSchemaRegistry {
     ProducerRecord<OrderId, CoffeeOrder> producerRecord = new ProducerRecord<>(COFFEE_ORDERS, coffeeOrder.getId(), coffeeOrder);
     var recordMetaData = producer.send(producerRecord).get();
     logger.infof("recordMetaData: %s", recordMetaData);
+    logger.infof("Published the producerRecord: %s", producerRecord);
   }
 }
