@@ -2,6 +2,22 @@
 
 This repository has the content to interact with Kafka using AVRO and Schema Registry.
 
+
+## NOTES
+- Evolving the Schema - Consumer Fails to Read the New Schema
+The New Schema was published is different from the Schema was cached by the Consumer
+```
+ERROR: Cannot resolve schema for fingerprint: -4256560753428017869
+org.apache.avro.message.MissingSchemaException: Cannot resolve schema for fingerprint: -4256560753428017869
+        at org.apache.avro.message.BinaryMessageDecoder.getDecoder(BinaryMessageDecoder.java:142)
+        at org.apache.avro.message.BinaryMessageDecoder.decode(BinaryMessageDecoder.java:160)
+        at org.apache.avro.message.MessageDecoder$BaseDecoder.decode(MessageDecoder.java:141)
+        at org.apache.avro.message.MessageDecoder$BaseDecoder.decode(MessageDecoder.java:129)
+        at org.khang.domain.generated.CoffeeOrder.fromByteBuffer(CoffeeOrder.java:79)
+        at consumer.CoffeeOrderConsumer.decodeAvroCoffeeOrder(CoffeeOrderConsumer.java:57)
+        at consumer.CoffeeOrderConsumer.main(CoffeeOrderConsumer.java:42)
+```
+
 ## Set up Kafka Environment using Docker
 
 - This should set up the Zookeeper and Kafka Broker in your local environment
