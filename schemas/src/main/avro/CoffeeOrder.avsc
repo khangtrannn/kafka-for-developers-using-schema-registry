@@ -32,6 +32,14 @@
       }
     },
     {
+      "name": "pick_up",
+      "type": {
+        "type": "enum",
+        "name": "PickUp",
+        "symbols": ["IN_STORE", "CURBSIDE"]
+      }
+    },
+    {
       "name": "ordered_time",
       "type": {
         "type": "long",

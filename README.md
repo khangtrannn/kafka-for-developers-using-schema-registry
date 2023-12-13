@@ -71,6 +71,19 @@ org.apache.avro.message.MissingSchemaException: Cannot resolve schema for finger
   If the consumer using the new schema needs to be able to process data
   written by all registered schemas, not just the last two schemas, then use BACKWARD_TRANSITIVE
 
+- FORWARD Compatibility
+   Forward compatibility means that the data produced with a new schema can be read by consumers using the last schema
+   Consumers using the previous schema can read the new schema without any issues
+   Compatibility check happens between the last schema and the current schema
+
+   Rules
+      Add Fields
+      Delete Optional Fields
+   Upgrade First
+      Producers
+
+   If data produced with a new schema needs to be read by consumers using all registered schemas, not just the last two schemas, then use FORWARD_TRANSITIVE
+
 
 ## Set up Kafka Environment using Docker
 

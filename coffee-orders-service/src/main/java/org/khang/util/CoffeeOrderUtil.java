@@ -10,6 +10,7 @@ import org.khang.domain.generated.Address;
 import org.khang.domain.generated.CoffeeOrder;
 import org.khang.domain.generated.OrderId;
 import org.khang.domain.generated.OrderLineItem;
+import org.khang.domain.generated.PickUp;
 import org.khang.domain.generated.Size;
 import org.khang.domain.generated.Store;
 
@@ -26,6 +27,7 @@ public class CoffeeOrderUtil {
       .setStore(generateStore())
       .setOrderedTime(Instant.now())
       .setOrderedDate(LocalDate.now())
+      .setPickUp(PickUp.IN_STORE)
       .setOrderLineItems(generateOrderLineItems())
       .build();
   }
