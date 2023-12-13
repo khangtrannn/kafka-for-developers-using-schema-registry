@@ -54,6 +54,9 @@ org.apache.avro.message.MissingSchemaException: Cannot resolve schema for finger
   Compatibility
   This resource is used to check the compatibility between schemas
 
+- Data/Schema Evolution
+  Any time the data/schema evolves, the downstream consumers should be able to handle the old and new schema seamlessly
+
 ## Set up Kafka Environment using Docker
 
 - This should set up the Zookeeper and Kafka Broker in your local environment
