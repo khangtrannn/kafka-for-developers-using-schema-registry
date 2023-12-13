@@ -84,6 +84,19 @@ org.apache.avro.message.MissingSchemaException: Cannot resolve schema for finger
 
    If data produced with a new schema needs to be read by consumers using all registered schemas, not just the last two schemas, then use FORWARD_TRANSITIVE
 
+- FULL Compatibility
+   Full compatibility means it's both forward and backward compatible
+   It means that the old data can be read with the new schema or new data can also be read with the old schema
+
+   Rules
+      Restrictive compared to the Backward and Forward compatibility
+      Add Optional Fields
+      Delete Optional Fields
+   Upgrade First
+      Producers or Consumer (Any order)
+
+   If data produced with a new or old schema needs to be read by consumers using all the registered schemas, then use FULL_TRANSITIVE
+
 
 ## Set up Kafka Environment using Docker
 

@@ -14,10 +14,10 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -289492729645602716L;
+  private static final long serialVersionUID = -5879197001983308011L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"CoffeeOrder\",\"namespace\":\"org.khang.domain.generated\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"record\",\"name\":\"OrderId\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"}]}},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"nickName\",\"type\":\"string\",\"doc\":\"Optional field represents the nick name of the user\",\"default\":\"\"},{\"name\":\"store\",\"type\":{\"type\":\"record\",\"name\":\"Store\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"},{\"name\":\"address\",\"type\":{\"type\":\"record\",\"name\":\"Address\",\"fields\":[{\"name\":\"addressLine1\",\"type\":\"string\"},{\"name\":\"city\",\"type\":\"string\"},{\"name\":\"state_province\",\"type\":\"string\"},{\"name\":\"country\",\"type\":\"string\",\"default\":\"Viet Nam\"},{\"name\":\"zip\",\"type\":\"string\"}]}}]}},{\"name\":\"orderLineItems\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"OrderLineItem\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"size\",\"type\":{\"type\":\"enum\",\"name\":\"Size\",\"symbols\":[\"SMALL\",\"MEDIUM\",\"LARGE\"]}},{\"name\":\"quantity\",\"type\":\"int\"},{\"name\":\"cost\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":3,\"scale\":2}}]}}},{\"name\":\"pick_up\",\"type\":{\"type\":\"enum\",\"name\":\"PickUp\",\"symbols\":[\"IN_STORE\",\"CURBSIDE\"]}},{\"name\":\"ordered_time\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}},{\"name\":\"ordered_date\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"status\",\"type\":\"string\",\"default\":\"NEW\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"CoffeeOrder\",\"namespace\":\"org.khang.domain.generated\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"record\",\"name\":\"OrderId\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"}]}},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"nickName\",\"type\":\"string\",\"doc\":\"Optional field represents the nick name of the user\",\"default\":\"\"},{\"name\":\"nickName1\",\"type\":\"string\",\"doc\":\"Optional field represents the nick name of the user\",\"default\":\"\"},{\"name\":\"store\",\"type\":{\"type\":\"record\",\"name\":\"Store\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"},{\"name\":\"address\",\"type\":{\"type\":\"record\",\"name\":\"Address\",\"fields\":[{\"name\":\"addressLine1\",\"type\":\"string\"},{\"name\":\"city\",\"type\":\"string\"},{\"name\":\"state_province\",\"type\":\"string\"},{\"name\":\"country\",\"type\":\"string\",\"default\":\"Viet Nam\"},{\"name\":\"zip\",\"type\":\"string\"}]}}]}},{\"name\":\"orderLineItems\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"OrderLineItem\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"size\",\"type\":{\"type\":\"enum\",\"name\":\"Size\",\"symbols\":[\"SMALL\",\"MEDIUM\",\"LARGE\"]}},{\"name\":\"quantity\",\"type\":\"int\"},{\"name\":\"cost\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":3,\"scale\":2}}]}}},{\"name\":\"pick_up\",\"type\":{\"type\":\"enum\",\"name\":\"PickUp\",\"symbols\":[\"IN_STORE\",\"CURBSIDE\"]}},{\"name\":\"ordered_time\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}},{\"name\":\"ordered_date\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"status\",\"type\":\"string\",\"default\":\"NEW\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -82,6 +82,8 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
   private java.lang.CharSequence name;
   /** Optional field represents the nick name of the user */
   private java.lang.CharSequence nickName;
+  /** Optional field represents the nick name of the user */
+  private java.lang.CharSequence nickName1;
   private org.khang.domain.generated.Store store;
   private java.util.List<org.khang.domain.generated.OrderLineItem> orderLineItems;
   private org.khang.domain.generated.PickUp pick_up;
@@ -101,6 +103,7 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
    * @param id The new value for id
    * @param name The new value for name
    * @param nickName Optional field represents the nick name of the user
+   * @param nickName1 Optional field represents the nick name of the user
    * @param store The new value for store
    * @param orderLineItems The new value for orderLineItems
    * @param pick_up The new value for pick_up
@@ -108,10 +111,11 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
    * @param ordered_date The new value for ordered_date
    * @param status The new value for status
    */
-  public CoffeeOrder(org.khang.domain.generated.OrderId id, java.lang.CharSequence name, java.lang.CharSequence nickName, org.khang.domain.generated.Store store, java.util.List<org.khang.domain.generated.OrderLineItem> orderLineItems, org.khang.domain.generated.PickUp pick_up, java.time.Instant ordered_time, java.time.LocalDate ordered_date, java.lang.CharSequence status) {
+  public CoffeeOrder(org.khang.domain.generated.OrderId id, java.lang.CharSequence name, java.lang.CharSequence nickName, java.lang.CharSequence nickName1, org.khang.domain.generated.Store store, java.util.List<org.khang.domain.generated.OrderLineItem> orderLineItems, org.khang.domain.generated.PickUp pick_up, java.time.Instant ordered_time, java.time.LocalDate ordered_date, java.lang.CharSequence status) {
     this.id = id;
     this.name = name;
     this.nickName = nickName;
+    this.nickName1 = nickName1;
     this.store = store;
     this.orderLineItems = orderLineItems;
     this.pick_up = pick_up;
@@ -133,18 +137,20 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
     case 0: return id;
     case 1: return name;
     case 2: return nickName;
-    case 3: return store;
-    case 4: return orderLineItems;
-    case 5: return pick_up;
-    case 6: return ordered_time;
-    case 7: return ordered_date;
-    case 8: return status;
+    case 3: return nickName1;
+    case 4: return store;
+    case 5: return orderLineItems;
+    case 6: return pick_up;
+    case 7: return ordered_time;
+    case 8: return ordered_date;
+    case 9: return status;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
   private static final org.apache.avro.Conversion<?>[] conversions =
       new org.apache.avro.Conversion<?>[] {
+      null,
       null,
       null,
       null,
@@ -170,12 +176,13 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
     case 0: id = (org.khang.domain.generated.OrderId)value$; break;
     case 1: name = (java.lang.CharSequence)value$; break;
     case 2: nickName = (java.lang.CharSequence)value$; break;
-    case 3: store = (org.khang.domain.generated.Store)value$; break;
-    case 4: orderLineItems = (java.util.List<org.khang.domain.generated.OrderLineItem>)value$; break;
-    case 5: pick_up = (org.khang.domain.generated.PickUp)value$; break;
-    case 6: ordered_time = (java.time.Instant)value$; break;
-    case 7: ordered_date = (java.time.LocalDate)value$; break;
-    case 8: status = (java.lang.CharSequence)value$; break;
+    case 3: nickName1 = (java.lang.CharSequence)value$; break;
+    case 4: store = (org.khang.domain.generated.Store)value$; break;
+    case 5: orderLineItems = (java.util.List<org.khang.domain.generated.OrderLineItem>)value$; break;
+    case 6: pick_up = (org.khang.domain.generated.PickUp)value$; break;
+    case 7: ordered_time = (java.time.Instant)value$; break;
+    case 8: ordered_date = (java.time.LocalDate)value$; break;
+    case 9: status = (java.lang.CharSequence)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -230,6 +237,24 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
    */
   public void setNickName(java.lang.CharSequence value) {
     this.nickName = value;
+  }
+
+  /**
+   * Gets the value of the 'nickName1' field.
+   * @return Optional field represents the nick name of the user
+   */
+  public java.lang.CharSequence getNickName1() {
+    return nickName1;
+  }
+
+
+  /**
+   * Sets the value of the 'nickName1' field.
+   * Optional field represents the nick name of the user
+   * @param value the value to set.
+   */
+  public void setNickName1(java.lang.CharSequence value) {
+    this.nickName1 = value;
   }
 
   /**
@@ -380,6 +405,8 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
     private java.lang.CharSequence name;
     /** Optional field represents the nick name of the user */
     private java.lang.CharSequence nickName;
+    /** Optional field represents the nick name of the user */
+    private java.lang.CharSequence nickName1;
     private org.khang.domain.generated.Store store;
     private org.khang.domain.generated.Store.Builder storeBuilder;
     private java.util.List<org.khang.domain.generated.OrderLineItem> orderLineItems;
@@ -414,32 +441,36 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
         this.nickName = data().deepCopy(fields()[2].schema(), other.nickName);
         fieldSetFlags()[2] = other.fieldSetFlags()[2];
       }
-      if (isValidValue(fields()[3], other.store)) {
-        this.store = data().deepCopy(fields()[3].schema(), other.store);
+      if (isValidValue(fields()[3], other.nickName1)) {
+        this.nickName1 = data().deepCopy(fields()[3].schema(), other.nickName1);
         fieldSetFlags()[3] = other.fieldSetFlags()[3];
+      }
+      if (isValidValue(fields()[4], other.store)) {
+        this.store = data().deepCopy(fields()[4].schema(), other.store);
+        fieldSetFlags()[4] = other.fieldSetFlags()[4];
       }
       if (other.hasStoreBuilder()) {
         this.storeBuilder = org.khang.domain.generated.Store.newBuilder(other.getStoreBuilder());
       }
-      if (isValidValue(fields()[4], other.orderLineItems)) {
-        this.orderLineItems = data().deepCopy(fields()[4].schema(), other.orderLineItems);
-        fieldSetFlags()[4] = other.fieldSetFlags()[4];
-      }
-      if (isValidValue(fields()[5], other.pick_up)) {
-        this.pick_up = data().deepCopy(fields()[5].schema(), other.pick_up);
+      if (isValidValue(fields()[5], other.orderLineItems)) {
+        this.orderLineItems = data().deepCopy(fields()[5].schema(), other.orderLineItems);
         fieldSetFlags()[5] = other.fieldSetFlags()[5];
       }
-      if (isValidValue(fields()[6], other.ordered_time)) {
-        this.ordered_time = data().deepCopy(fields()[6].schema(), other.ordered_time);
+      if (isValidValue(fields()[6], other.pick_up)) {
+        this.pick_up = data().deepCopy(fields()[6].schema(), other.pick_up);
         fieldSetFlags()[6] = other.fieldSetFlags()[6];
       }
-      if (isValidValue(fields()[7], other.ordered_date)) {
-        this.ordered_date = data().deepCopy(fields()[7].schema(), other.ordered_date);
+      if (isValidValue(fields()[7], other.ordered_time)) {
+        this.ordered_time = data().deepCopy(fields()[7].schema(), other.ordered_time);
         fieldSetFlags()[7] = other.fieldSetFlags()[7];
       }
-      if (isValidValue(fields()[8], other.status)) {
-        this.status = data().deepCopy(fields()[8].schema(), other.status);
+      if (isValidValue(fields()[8], other.ordered_date)) {
+        this.ordered_date = data().deepCopy(fields()[8].schema(), other.ordered_date);
         fieldSetFlags()[8] = other.fieldSetFlags()[8];
+      }
+      if (isValidValue(fields()[9], other.status)) {
+        this.status = data().deepCopy(fields()[9].schema(), other.status);
+        fieldSetFlags()[9] = other.fieldSetFlags()[9];
       }
     }
 
@@ -462,30 +493,34 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
         this.nickName = data().deepCopy(fields()[2].schema(), other.nickName);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.store)) {
-        this.store = data().deepCopy(fields()[3].schema(), other.store);
+      if (isValidValue(fields()[3], other.nickName1)) {
+        this.nickName1 = data().deepCopy(fields()[3].schema(), other.nickName1);
         fieldSetFlags()[3] = true;
       }
-      this.storeBuilder = null;
-      if (isValidValue(fields()[4], other.orderLineItems)) {
-        this.orderLineItems = data().deepCopy(fields()[4].schema(), other.orderLineItems);
+      if (isValidValue(fields()[4], other.store)) {
+        this.store = data().deepCopy(fields()[4].schema(), other.store);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.pick_up)) {
-        this.pick_up = data().deepCopy(fields()[5].schema(), other.pick_up);
+      this.storeBuilder = null;
+      if (isValidValue(fields()[5], other.orderLineItems)) {
+        this.orderLineItems = data().deepCopy(fields()[5].schema(), other.orderLineItems);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.ordered_time)) {
-        this.ordered_time = data().deepCopy(fields()[6].schema(), other.ordered_time);
+      if (isValidValue(fields()[6], other.pick_up)) {
+        this.pick_up = data().deepCopy(fields()[6].schema(), other.pick_up);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.ordered_date)) {
-        this.ordered_date = data().deepCopy(fields()[7].schema(), other.ordered_date);
+      if (isValidValue(fields()[7], other.ordered_time)) {
+        this.ordered_time = data().deepCopy(fields()[7].schema(), other.ordered_time);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.status)) {
-        this.status = data().deepCopy(fields()[8].schema(), other.status);
+      if (isValidValue(fields()[8], other.ordered_date)) {
+        this.ordered_date = data().deepCopy(fields()[8].schema(), other.ordered_date);
         fieldSetFlags()[8] = true;
+      }
+      if (isValidValue(fields()[9], other.status)) {
+        this.status = data().deepCopy(fields()[9].schema(), other.status);
+        fieldSetFlags()[9] = true;
       }
     }
 
@@ -650,6 +685,50 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
     }
 
     /**
+      * Gets the value of the 'nickName1' field.
+      * Optional field represents the nick name of the user
+      * @return The value.
+      */
+    public java.lang.CharSequence getNickName1() {
+      return nickName1;
+    }
+
+
+    /**
+      * Sets the value of the 'nickName1' field.
+      * Optional field represents the nick name of the user
+      * @param value The value of 'nickName1'.
+      * @return This builder.
+      */
+    public org.khang.domain.generated.CoffeeOrder.Builder setNickName1(java.lang.CharSequence value) {
+      validate(fields()[3], value);
+      this.nickName1 = value;
+      fieldSetFlags()[3] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'nickName1' field has been set.
+      * Optional field represents the nick name of the user
+      * @return True if the 'nickName1' field has been set, false otherwise.
+      */
+    public boolean hasNickName1() {
+      return fieldSetFlags()[3];
+    }
+
+
+    /**
+      * Clears the value of the 'nickName1' field.
+      * Optional field represents the nick name of the user
+      * @return This builder.
+      */
+    public org.khang.domain.generated.CoffeeOrder.Builder clearNickName1() {
+      nickName1 = null;
+      fieldSetFlags()[3] = false;
+      return this;
+    }
+
+    /**
       * Gets the value of the 'store' field.
       * @return The value.
       */
@@ -664,10 +743,10 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
       * @return This builder.
       */
     public org.khang.domain.generated.CoffeeOrder.Builder setStore(org.khang.domain.generated.Store value) {
-      validate(fields()[3], value);
+      validate(fields()[4], value);
       this.storeBuilder = null;
       this.store = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[4] = true;
       return this;
     }
 
@@ -676,7 +755,7 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
       * @return True if the 'store' field has been set, false otherwise.
       */
     public boolean hasStore() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[4];
     }
 
     /**
@@ -721,7 +800,7 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
     public org.khang.domain.generated.CoffeeOrder.Builder clearStore() {
       store = null;
       storeBuilder = null;
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
 
@@ -740,9 +819,9 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
       * @return This builder.
       */
     public org.khang.domain.generated.CoffeeOrder.Builder setOrderLineItems(java.util.List<org.khang.domain.generated.OrderLineItem> value) {
-      validate(fields()[4], value);
+      validate(fields()[5], value);
       this.orderLineItems = value;
-      fieldSetFlags()[4] = true;
+      fieldSetFlags()[5] = true;
       return this;
     }
 
@@ -751,7 +830,7 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
       * @return True if the 'orderLineItems' field has been set, false otherwise.
       */
     public boolean hasOrderLineItems() {
-      return fieldSetFlags()[4];
+      return fieldSetFlags()[5];
     }
 
 
@@ -761,7 +840,7 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
       */
     public org.khang.domain.generated.CoffeeOrder.Builder clearOrderLineItems() {
       orderLineItems = null;
-      fieldSetFlags()[4] = false;
+      fieldSetFlags()[5] = false;
       return this;
     }
 
@@ -780,9 +859,9 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
       * @return This builder.
       */
     public org.khang.domain.generated.CoffeeOrder.Builder setPickUp(org.khang.domain.generated.PickUp value) {
-      validate(fields()[5], value);
+      validate(fields()[6], value);
       this.pick_up = value;
-      fieldSetFlags()[5] = true;
+      fieldSetFlags()[6] = true;
       return this;
     }
 
@@ -791,7 +870,7 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
       * @return True if the 'pick_up' field has been set, false otherwise.
       */
     public boolean hasPickUp() {
-      return fieldSetFlags()[5];
+      return fieldSetFlags()[6];
     }
 
 
@@ -801,7 +880,7 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
       */
     public org.khang.domain.generated.CoffeeOrder.Builder clearPickUp() {
       pick_up = null;
-      fieldSetFlags()[5] = false;
+      fieldSetFlags()[6] = false;
       return this;
     }
 
@@ -820,9 +899,9 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
       * @return This builder.
       */
     public org.khang.domain.generated.CoffeeOrder.Builder setOrderedTime(java.time.Instant value) {
-      validate(fields()[6], value);
+      validate(fields()[7], value);
       this.ordered_time = value.truncatedTo(java.time.temporal.ChronoUnit.MILLIS);
-      fieldSetFlags()[6] = true;
+      fieldSetFlags()[7] = true;
       return this;
     }
 
@@ -831,7 +910,7 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
       * @return True if the 'ordered_time' field has been set, false otherwise.
       */
     public boolean hasOrderedTime() {
-      return fieldSetFlags()[6];
+      return fieldSetFlags()[7];
     }
 
 
@@ -840,7 +919,7 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
       * @return This builder.
       */
     public org.khang.domain.generated.CoffeeOrder.Builder clearOrderedTime() {
-      fieldSetFlags()[6] = false;
+      fieldSetFlags()[7] = false;
       return this;
     }
 
@@ -859,9 +938,9 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
       * @return This builder.
       */
     public org.khang.domain.generated.CoffeeOrder.Builder setOrderedDate(java.time.LocalDate value) {
-      validate(fields()[7], value);
+      validate(fields()[8], value);
       this.ordered_date = value;
-      fieldSetFlags()[7] = true;
+      fieldSetFlags()[8] = true;
       return this;
     }
 
@@ -870,7 +949,7 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
       * @return True if the 'ordered_date' field has been set, false otherwise.
       */
     public boolean hasOrderedDate() {
-      return fieldSetFlags()[7];
+      return fieldSetFlags()[8];
     }
 
 
@@ -879,7 +958,7 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
       * @return This builder.
       */
     public org.khang.domain.generated.CoffeeOrder.Builder clearOrderedDate() {
-      fieldSetFlags()[7] = false;
+      fieldSetFlags()[8] = false;
       return this;
     }
 
@@ -898,9 +977,9 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
       * @return This builder.
       */
     public org.khang.domain.generated.CoffeeOrder.Builder setStatus(java.lang.CharSequence value) {
-      validate(fields()[8], value);
+      validate(fields()[9], value);
       this.status = value;
-      fieldSetFlags()[8] = true;
+      fieldSetFlags()[9] = true;
       return this;
     }
 
@@ -909,7 +988,7 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
       * @return True if the 'status' field has been set, false otherwise.
       */
     public boolean hasStatus() {
-      return fieldSetFlags()[8];
+      return fieldSetFlags()[9];
     }
 
 
@@ -919,7 +998,7 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
       */
     public org.khang.domain.generated.CoffeeOrder.Builder clearStatus() {
       status = null;
-      fieldSetFlags()[8] = false;
+      fieldSetFlags()[9] = false;
       return this;
     }
 
@@ -940,6 +1019,7 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
         }
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.nickName = fieldSetFlags()[2] ? this.nickName : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.nickName1 = fieldSetFlags()[3] ? this.nickName1 : (java.lang.CharSequence) defaultValue(fields()[3]);
         if (storeBuilder != null) {
           try {
             record.store = this.storeBuilder.build();
@@ -948,13 +1028,13 @@ public class CoffeeOrder extends org.apache.avro.specific.SpecificRecordBase imp
             throw e;
           }
         } else {
-          record.store = fieldSetFlags()[3] ? this.store : (org.khang.domain.generated.Store) defaultValue(fields()[3]);
+          record.store = fieldSetFlags()[4] ? this.store : (org.khang.domain.generated.Store) defaultValue(fields()[4]);
         }
-        record.orderLineItems = fieldSetFlags()[4] ? this.orderLineItems : (java.util.List<org.khang.domain.generated.OrderLineItem>) defaultValue(fields()[4]);
-        record.pick_up = fieldSetFlags()[5] ? this.pick_up : (org.khang.domain.generated.PickUp) defaultValue(fields()[5]);
-        record.ordered_time = fieldSetFlags()[6] ? this.ordered_time : (java.time.Instant) defaultValue(fields()[6]);
-        record.ordered_date = fieldSetFlags()[7] ? this.ordered_date : (java.time.LocalDate) defaultValue(fields()[7]);
-        record.status = fieldSetFlags()[8] ? this.status : (java.lang.CharSequence) defaultValue(fields()[8]);
+        record.orderLineItems = fieldSetFlags()[5] ? this.orderLineItems : (java.util.List<org.khang.domain.generated.OrderLineItem>) defaultValue(fields()[5]);
+        record.pick_up = fieldSetFlags()[6] ? this.pick_up : (org.khang.domain.generated.PickUp) defaultValue(fields()[6]);
+        record.ordered_time = fieldSetFlags()[7] ? this.ordered_time : (java.time.Instant) defaultValue(fields()[7]);
+        record.ordered_date = fieldSetFlags()[8] ? this.ordered_date : (java.time.LocalDate) defaultValue(fields()[8]);
+        record.status = fieldSetFlags()[9] ? this.status : (java.lang.CharSequence) defaultValue(fields()[9]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;

@@ -18,6 +18,12 @@
       "doc": "Optional field represents the nick name of the user"
     },
     {
+      "name": "nickName1",
+      "type": "string",
+      "default": "",
+      "doc": "Optional field represents the nick name of the user"
+    },
+    {
       "name": "store",
       "type": "Store"
     },
